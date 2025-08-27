@@ -1,0 +1,3 @@
+remote_theme: benbalter/serial-programmer
+plugins:
+  - jekyll-remote-theme
