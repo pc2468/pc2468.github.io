@@ -1,3 +1,8 @@
+title: "Serial Programmer Demo"
+description: "A demo of a serial programmer project"
 remote_theme: benbalter/serial-programmer
 plugins:
   - jekyll-remote-theme
+url: "https://pc2468.github.io"
+baseurl: "/Serial-Programmer-demo"
+author: "Your Name"
