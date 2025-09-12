@@ -1,0 +1,25 @@
+import{c as n,j as e,p as a}from"./data.BH1TNu6J.js";import{M as s}from"./MotionWrapper.CZQVW2Zw.js";import{m as r}from"./proxy.BRpJZlpp.js";import"./index.DtoOFyvK.js";/**
+ * @license lucide-react v0.483.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const i=[["path",{d:"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",key:"tonef"}],["path",{d:"M9 18c-4.51 2-5-2-7-2",key:"9comsn"}]],l=n("Github",i);/**
+ * @license lucide-react v0.483.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=[["path",{d:"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",key:"c2jq9f"}],["rect",{width:"4",height:"12",x:"2",y:"9",key:"mk3on5"}],["circle",{cx:"4",cy:"4",r:"2",key:"bt5ra8"}]],c=n("Linkedin",d);/**
+ * @license lucide-react v0.483.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m=[["rect",{width:"20",height:"16",x:"2",y:"4",rx:"2",key:"18n3k1"}],["path",{d:"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7",key:"1ocrg3"}]],x=n("Mail",m);/**
+ * @license lucide-react v0.483.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=[["path",{d:"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",key:"1r0f0z"}],["circle",{cx:"12",cy:"10",r:"3",key:"ilqhr7"}]],p=n("MapPin",h);function g(){const o={hidden:{opacity:0},visible:{opacity:1,transition:{staggerChildren:.2,delayChildren:.3}}},t={hidden:{opacity:0,y:20},visible:{opacity:1,y:0,transition:{duration:.5}}};return e.jsx("section",{id:"personalInfo",className:"py-16 md:py-24 relative overflow-hidden",children:e.jsxs("div",{className:"container max-w-4xl mx-auto px-6 md:px-4 relative z-10",children:[e.jsxs(r.div,{className:"flex flex-col md:flex-row md:items-center justify-between mb-8",variants:o,initial:"hidden",animate:"visible",children:[e.jsxs("div",{className:"text-center md:text-left",children:[e.jsx(r.h1,{className:"text-4xl font-bold mb-2 whitespace-nowrap",variants:t,children:a.name}),e.jsx(r.p,{className:"text-xl text-muted-foreground mb-6",variants:t,children:"Physics Student"}),e.jsxs(r.div,{className:"flex flex-col gap-2 items-center md:items-start",variants:o,children:[e.jsxs(r.div,{className:"flex items-center text-sm text-muted-foreground",variants:t,children:[e.jsx(p,{className:"h-4 w-4 mr-2"}),a.location]}),e.jsxs(r.a,{href:`mailto:${a.email}`,className:"flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors",variants:t,children:[e.jsx(x,{className:"h-4 w-4 mr-2"}),a.email]}),e.jsxs(r.a,{href:a.github,target:"_blank",rel:"noopener noreferrer",className:"flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors",variants:t,children:[e.jsx(l,{className:"h-4 w-4 mr-2"}),"GitHub"]}),e.jsxs(r.a,{href:a.linkedin,target:"_blank",rel:"noopener noreferrer",className:"flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors",variants:t,children:[e.jsx(c,{className:"h-4 w-4 mr-2"}),"🔗 LinkedIn"]})]})]}),e.jsx(r.div,{className:"mt-6 md:mt-0 flex justify-center w-full md:w-[600px]",variants:t,children:e.jsx("div",{className:"relative rounded-2xl p-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg",children:e.jsxs("div",{className:"relative w-full h-[400px] rounded-2xl overflow-hidden bg-background/70 backdrop-blur-md",children:[e.jsx("iframe",{src:"/Pc_Msc_Cv.pdf#zoom=page-width&toolbar=0&navpanes=0&scrollbar=0",className:"w-full h-full rounded-2xl",style:{border:"none",overflow:"hidden",scrollbarWidth:"none",msOverflowStyle:"none",background:"transparent"},scrolling:"no"}),e.jsx("a",{href:"/Pc_Msc_Cv.pdf",target:"_blank",rel:"noopener noreferrer",className:`absolute bottom-4 right-4 px-5 py-2 rounded-xl 
+                            bg-white/50 backdrop-blur-md text-black font-medium 
+                            border border-black/20 shadow-md
+                            hover:bg-gradient-to-r hover:from-purple-200 hover:to-pink-200
+                            transition-all duration-300`,children:"View CV"})]})})})]}),e.jsx(s,{children:e.jsx("div",{className:"bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm p-4 rounded-lg border border-purple-500/20 dark:border-purple-500/10 shadow-sm",children:e.jsxs("p",{className:"text-muted-foreground pl-4 py-2 mb-4 relative",children:[e.jsx("span",{className:"absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"}),a.heroDescription]})})})]})})}export{g as default};
