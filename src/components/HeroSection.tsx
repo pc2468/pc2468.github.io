@@ -106,75 +106,77 @@ export default function HeroSection() {
             <div className="relative rounded-2xl p-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg">
               {/* Glass container */}
               <div className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-background/70 backdrop-blur-md">
-              
-            {/* Scrollable wrapper with grab-to-scroll */}
-            <div
-              className="w-full h-full overflow-auto rounded-2xl bg-black flex items-center justify-center [scrollbar-width:none] [-ms-overflow-style:none] cursor-grab"
-              onMouseDown={(e) => {
-                const el = e.currentTarget;
-                el.classList.add("cursor-grabbing");
-                const iframe = el.querySelector("iframe") as HTMLIFrameElement;
-                iframe.style.pointerEvents = "none";
-
-                el.dataset.dragging = "true";
-                el.dataset.startX = e.pageX.toString();
-                el.dataset.startY = e.pageY.toString();
-                el.dataset.scrollLeft = el.scrollLeft.toString();
-                el.dataset.scrollTop = el.scrollTop.toString();
-
-                const onMouseUp = () => {
-                  el.dataset.dragging = "false";
-                  el.classList.remove("cursor-grabbing");
-                  iframe.style.pointerEvents = "auto";
-                  window.removeEventListener("mouseup", onMouseUp);
-                };
-                window.addEventListener("mouseup", onMouseUp);
-              }}
-              onMouseMove={(e) => {
-                const el = e.currentTarget;
-                if (el.dataset.dragging !== "true") return;
-                e.preventDefault();
-                const startX = parseInt(el.dataset.startX || "0", 10);
-                const startY = parseInt(el.dataset.startY || "0", 10);
-                const scrollLeft = parseInt(el.dataset.scrollLeft || "0", 10);
-                const scrollTop = parseInt(el.dataset.scrollTop || "0", 10);
-                const walkX = e.pageX - startX;
-                const walkY = e.pageY - startY;
-                el.scrollLeft = scrollLeft - walkX;
-                el.scrollTop = scrollTop - walkY;
-              }}
-            >
-              <iframe
-                src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/Pc_Msc_Cv.pdf"
-                style="width:95%; height:95vh; border:none; background:black;"
-                class="rounded-lg"
-              ></iframe>
-
-            </div>
-
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
-
-                {/* Glass Button */}
+                
+                {/* Scrollable wrapper with grab-to-scroll */}
+                <div
+                  className="w-full h-full overflow-auto rounded-2xl bg-black flex items-center justify-center [scrollbar-width:none] [-ms-overflow-style:none] cursor-grab"
+                  onMouseDown={(e) => {
+                    const el = e.currentTarget;
+                    el.classList.add("cursor-grabbing");
+                    const iframe = el.querySelector("iframe") as HTMLIFrameElement;
+                    if (iframe) iframe.style.pointerEvents = "none";
+          
+                    el.dataset.dragging = "true";
+                    el.dataset.startX = e.pageX.toString();
+                    el.dataset.startY = e.pageY.toString();
+                    el.dataset.scrollLeft = el.scrollLeft.toString();
+                    el.dataset.scrollTop = el.scrollTop.toString();
+          
+                    const onMouseUp = () => {
+                      el.dataset.dragging = "false";
+                      el.classList.remove("cursor-grabbing");
+                      if (iframe) iframe.style.pointerEvents = "auto";
+                      window.removeEventListener("mouseup", onMouseUp);
+                    };
+                    window.addEventListener("mouseup", onMouseUp);
+                  }}
+                  onMouseMove={(e) => {
+                    const el = e.currentTarget;
+                    if (el.dataset.dragging !== "true") return;
+                    e.preventDefault();
+                    const startX = parseInt(el.dataset.startX || "0", 10);
+                    const startY = parseInt(el.dataset.startY || "0", 10);
+                    const scrollLeft = parseInt(el.dataset.scrollLeft || "0", 10);
+                    const scrollTop = parseInt(el.dataset.scrollTop || "0", 10);
+                    const walkX = e.pageX - startX;
+                    const walkY = e.pageY - startY;
+                    el.scrollLeft = scrollLeft - walkX;
+                    el.scrollTop = scrollTop - walkY;
+                  }}
+                >
+                  {/* Universal PDF Viewer (works on mobile + desktop) */}
+                  <iframe
+                    src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/Pc_Msc_Cv.pdf"
+                    className="rounded-lg w-[95%] h-[95vh]"
+                    style={{ border: "none", background: "black" }}
+                    title="Curriculum Vitae"
+                  ></iframe>
+                </div>
+          
+                {/* Hide scrollbars */}
+                <style jsx>{`
+                  div::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+          
+                {/* Glass Button (always works as fallback) */}
                 <a
-                  href="/Pc_Msc_Cv.pdf"
+                  href="https://pc2468.github.io/Pc_Msc_Cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="absolute bottom-4 right-4 px-5 py-2 rounded-xl 
-                            bg-white/50 backdrop-blur-md text-black font-medium 
-                            border border-black/20 shadow-md
-                            hover:bg-gradient-to-r hover:from-purple-200 hover:to-pink-200
-                            transition-all duration-300"
+                             bg-white/50 backdrop-blur-md text-black font-medium 
+                             border border-black/20 shadow-md
+                             hover:bg-gradient-to-r hover:from-purple-200 hover:to-pink-200
+                             transition-all duration-300"
                 >
                   View CV
                 </a>
-
               </div>
             </div>
           </motion.div>
+
 
         </motion.div>
 
