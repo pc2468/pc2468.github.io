@@ -92,7 +92,7 @@ export default function HeroSection() {
                 variants={childVariants}
               >
                 <Linkedin className="h-4 w-4 mr-2" />
-                🔗 LinkedIn
+                LinkedIn
               </motion.a>
             </motion.div>
           </div>
