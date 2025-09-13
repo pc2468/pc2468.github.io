@@ -145,10 +145,11 @@ export default function HeroSection() {
               }}
             >
               <iframe
-                src="/Pc_Msc_Cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                className="w-[95%] h-[95%] rounded-lg"
-                style={{ border: "none", background: "black" }}
-              />
+                src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/Pc_Msc_Cv.pdf"
+                style="width:95%; height:95vh; border:none; background:black;"
+                class="rounded-lg"
+              ></iframe>
+
             </div>
 
             <style jsx>{`
