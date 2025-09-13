@@ -26,8 +26,8 @@ export default function InterestsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="relative p-8 rounded-3xl border border-white/10
-                      bg-black/40 backdrop-blur-2xl shadow-lg
-                      hover:bg-black/50 hover:shadow-2xl
+                      bg-transparent backdrop-blur-2xl shadow-lg
+                      hover:bg-transparent hover:shadow-2xl
                       transition-all duration-500"
           >
             {/* Subtle gradient overlay for depth */}

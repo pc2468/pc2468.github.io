@@ -106,20 +106,56 @@ export default function HeroSection() {
             <div className="relative rounded-2xl p-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg">
               {/* Glass container */}
               <div className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-background/70 backdrop-blur-md">
-                
-                {/* PDF iframe */}
-                <iframe
-                  src="/Pc_Msc_Cv.pdf#zoom=page-width&toolbar=0&navpanes=0&scrollbar=0"
-                  className="w-full h-full rounded-2xl"
-                  style={{
-                    border: "none",
-                    overflow: "hidden",
-                    scrollbarWidth: "none",
-                    msOverflowStyle: "none",
-                    background: "transparent",
-                  }}
-                  scrolling="no"
-                />
+              
+            {/* Scrollable wrapper with grab-to-scroll */}
+            <div
+              className="w-full h-full overflow-auto rounded-2xl bg-black flex items-center justify-center [scrollbar-width:none] [-ms-overflow-style:none] cursor-grab"
+              onMouseDown={(e) => {
+                const el = e.currentTarget;
+                el.classList.add("cursor-grabbing");
+                const iframe = el.querySelector("iframe") as HTMLIFrameElement;
+                iframe.style.pointerEvents = "none";
+
+                el.dataset.dragging = "true";
+                el.dataset.startX = e.pageX.toString();
+                el.dataset.startY = e.pageY.toString();
+                el.dataset.scrollLeft = el.scrollLeft.toString();
+                el.dataset.scrollTop = el.scrollTop.toString();
+
+                const onMouseUp = () => {
+                  el.dataset.dragging = "false";
+                  el.classList.remove("cursor-grabbing");
+                  iframe.style.pointerEvents = "auto";
+                  window.removeEventListener("mouseup", onMouseUp);
+                };
+                window.addEventListener("mouseup", onMouseUp);
+              }}
+              onMouseMove={(e) => {
+                const el = e.currentTarget;
+                if (el.dataset.dragging !== "true") return;
+                e.preventDefault();
+                const startX = parseInt(el.dataset.startX || "0", 10);
+                const startY = parseInt(el.dataset.startY || "0", 10);
+                const scrollLeft = parseInt(el.dataset.scrollLeft || "0", 10);
+                const scrollTop = parseInt(el.dataset.scrollTop || "0", 10);
+                const walkX = e.pageX - startX;
+                const walkY = e.pageY - startY;
+                el.scrollLeft = scrollLeft - walkX;
+                el.scrollTop = scrollTop - walkY;
+              }}
+            >
+              <iframe
+                src="/Pc_Msc_Cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                className="w-[95%] h-[95%] rounded-lg"
+                style={{ border: "none", background: "black" }}
+              />
+            </div>
+
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
 
                 {/* Glass Button */}
                 <a

@@ -120,9 +120,8 @@
 }
 
 /* Paste this at the end of your globals.css file */
-
 nav#main-nav {
-  background-color: transparent; /* Make sure you have this CSS variable defined */
+  background-color: transparent;
   transition:
     background-color 0.3s ease,
     border-radius 0.3s ease,
@@ -130,46 +129,69 @@ nav#main-nav {
 }
 
 nav#main-nav.scrolling {
-  background-color: hsla(0, 0%, 7%, 0.5); /* Semi-transparent dark background on scroll */
-  border-color: #ffffff10;
+  /* Capsule shape preserved */
   border-radius: 9999px;
+  border-color: #ffffff10;
+
+  /* Light mode background */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-nav#main-nav a.active .nav-indicator {
-  transform: translateY(-50%) scale(1);
-  opacity: 1;
+html.dark nav#main-nav.scrolling {
+  /* Capsule shape preserved */
+  border-radius: 9999px;
+  border-color: #ffffff10;
+
+  /* Dark mode background */
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
+nav a.active .nav-indicator {
+  opacity: 1 !important;
+  scale: 1 !important;
+}
+
+/* Active link colors */
 nav#main-nav a.active {
-  color: white !important;
+  color: black !important; /* Light mode */
+}
+
+html.dark nav#main-nav a.active {
+  color: white !important; /* Dark mode */
 }
 
 /* Mobile & tablet styles */
 @media (max-width: 1023px) {
   nav#main-nav {
-    width: auto;  /* capsule with margins */
+    width: auto;
     left: 50%;
-    transform: auto;
-    bottom: auto;              /* floating above bottom */
-    border-radius: 9999px;
-    background-color: hsla(0, 0%, 7%, 0.85);
-    height: auto;     /* capsule height */
+    transform: translateX(-50%);
+    bottom: auto;
+    border-radius: 9999px; /* Capsule */
+    background-color: rgba(255, 255, 255, 0.9); /* Light mode mobile */
+    height: auto;
     padding: 0 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     z-index: 100;
   }
 
+  html.dark nav#main-nav {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark mode mobile */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   nav#main-nav ul {
-    gap: 1rem; /* spacing between items */
+    gap: 1rem;
   }
 
   nav#main-nav a {
-    font-size: 0.75rem; /* smaller labels on mobile */
+    font-size: 0.75rem;
   }
 }
+
 
 
