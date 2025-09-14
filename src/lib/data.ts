@@ -70,7 +70,7 @@ export const experience = [
    {
     type: "project",
     title: "Geant4 Deployment Script",
-    github: "https://github.com/pc2468",
+    github: "https://github.com/pc2468/Geant4",
     description: [
       "Developed a Python script to fully automate the Geant4 installation and setup process.",
       "Engineered the tool to auto-resolve dependencies, manage build options, and configure system environments.",
@@ -80,7 +80,7 @@ export const experience = [
   {
     type: "project",
     title: "Shadow of Kerr Black Holes with Scalar Hair",
-    github: "https://github.com/pc2468",
+    github: "https://github.com/pc2468/Shadow of Kerr Black Holes",
     description: [
       "Developed a ray-tracing model to visualize the shadows of Kerr black holes with and without scalar hair.",
       "Demonstrated that scalar hair produces smaller and more distorted shadows compared to the standard Kerr metric.",
@@ -90,7 +90,7 @@ export const experience = [
   {
     type: "project",
     title: "Stellar Spectral Classification",
-    github: "https://github.com/pc2468",
+    github: "https://github.com/pc2468/Stellar-Spectral-Classification",
     description: [
       "Wrote a Python script to analyze stellar absorption spectra and estimate star temperatures using Wien's Law.",
       "Classified stars into spectral and luminosity classes based on the Morgan-Keenan (MK) system.",
