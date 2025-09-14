@@ -80,7 +80,7 @@ export const experience = [
   {
     type: "project",
     title: "Shadow of Kerr Black Holes with Scalar Hair",
-    github: "https://github.com/pc2468/Shadow of Kerr Black Holes",
+    github: "https://github.com/pc2468/Shadow-of-Kerr-Black-Holes",
     description: [
       "Developed a ray-tracing model to visualize the shadows of Kerr black holes with and without scalar hair.",
       "Demonstrated that scalar hair produces smaller and more distorted shadows compared to the standard Kerr metric.",
