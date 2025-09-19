@@ -21,7 +21,7 @@ Built with **Astro**, **React**, and **Tailwind CSS**, the site features modern 
 
 If you’d like to see how I customized this portfolio step by step, I’ve written a short guide:  
 
-[How You Can Build It (PDF)]([https://pc2468.github.io/how-to-build.pdf](https://github.com/pc2468/pc2468.github.io/blob/main/How%20you%20can%20build%20it..pdf))  
+[How You Can Build It (PDF)](https://github.com/pc2468/pc2468.github.io/blob/main/How%20you%20can%20build%20it..pdf)  
 
 It covers:
 - The base repo I started from  
