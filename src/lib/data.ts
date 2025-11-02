@@ -123,7 +123,7 @@ export const events = [
     issuer: "Department of Atomic Energy (DAE), India",
     date: "Oct 2025",
     description:
-      "Attended a four-day offline school at Mount Abu, gaining exposure to current research on AGNs, GRBs, Cosmic Rays, and Multi-Messenger Astronomy. Acquired hands-on experience with the TACTIC telescope and learned about gamma-ray detection using HESS, MAGIC, VERITAS, CTA, and the MACE telescope at Hanle, Ladakh.",
+      "Attended a four-day school on Very High Energy Astrophysics at Mount Abu, gaining hands-on experience with the TACTIC telescope and learning gamma-ray detection techniques using HESS, MAGIC, VERITAS, CTA, and MACE.",
   },
   {
     name: "GW Open Data Workshop 2025",
