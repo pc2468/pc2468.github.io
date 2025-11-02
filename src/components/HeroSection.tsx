@@ -146,7 +146,7 @@ export default function HeroSection() {
               >
                 {/* Universal PDF Viewer (works on mobile + desktop) */}
                 <iframe
-                  src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/pc_msc_cv.pdf"
+                  src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/Pc_Msc_Cv.pdf"
                   className="rounded-lg w-full h-full"
                   style={{ border: "none", background: "none" }}
                   title="Curriculum Vitae"
