@@ -19,13 +19,42 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-xetex texlive-fonts-recommended fonts-dejavu-core
 
-      - name: Compile with latexmk (xelatex) and include vendor folder
+      - name: Compile with latexmk (xelatex) and include vendor folder (debuggable)
         env:
-          TEXINPUTS: "./awesome-cv//:"   # tells kpathsea to search the folder recursively
+          TEXINPUTS: "./awesome-cv//:"
         run: |
+          set -eux
           mkdir -p public
-          # Use xelatex to handle modern fonts; adjust if you require pdflatex
-          latexmk -xelatex -interaction=nonstopmode -output-directory=public awesome-cv/pc_msc_cv.tex
+
+          # Run latexmk; capture exit code but continue so we can dump logs for debugging
+          latexmk -xelatex -interaction=nonstopmode -output-directory=public awesome-cv/pc_msc_cv.tex || true
+
+          # If PDF wasn't produced, show logs and directory contents to help debugging (exit non-zero)
+          if [ ! -f public/pc_msc_cv.pdf ]; then
+            echo "*** PDF not produced. Dumping relevant logs for debugging ***"
+            echo "--- Files in workspace (top-level) ---"
+            ls -la
+            echo "--- Files in awesome-cv/ ---"
+            ls -la awesome-cv || true
+            echo "--- Files in public/ ---"
+            ls -la public || true
+
+            echo "--- Showing latexmk log if present ---"
+            if [ -f "awesome-cv/pc_msc_cv.log" ]; then
+              echo "--- awesome-cv/pc_msc_cv.log ---"
+              sed -n '1,400p' awesome-cv/pc_msc_cv.log || true
+            fi
+            # show any .log files in repo
+            find . -type f -name "*.log" -print -exec sed -n '1,200p' {} \; || true
+
+            echo "--- latexmk output (.fdb_latexmk/.log) ---"
+            find . -maxdepth 3 -type f -name "*.fdb_latexmk" -o -name "*.fls" -print -exec sed -n '1,200p' {} \; || true
+
+            # Fail the step so workflow indicates failure
+            exit 12
+          else
+            echo "PDF produced: public/pc_msc_cv.pdf"
+          fi
 
       - name: Copy PDF to repo root (lowercase)
         run: |
