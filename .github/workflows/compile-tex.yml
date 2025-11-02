@@ -19,6 +19,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-xetex texlive-fonts-recommended fonts-dejavu-core
 
+      - name: Install fonts from awesome-cv (so xelatex can find them)
+        run: |
+          set -eux
+          if [ -d awesome-cv/fonts ]; then
+            sudo mkdir -p /usr/local/share/fonts/awesome-cv
+            sudo cp -v awesome-cv/fonts/* /usr/local/share/fonts/awesome-cv/ || true
+            # Refresh font cache
+            sudo fc-cache -f -v || true
+            echo "Installed fonts from awesome-cv/fonts into system font directory"
+          else
+            echo "No fonts directory found at awesome-cv/fonts; skipping font install"
+          fi
+
       - name: Compile with latexmk (xelatex) and include vendor folder (debuggable)
         env:
           TEXINPUTS: "./awesome-cv//:"
