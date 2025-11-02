@@ -148,7 +148,7 @@ export default function HeroSection() {
                 <iframe
                   src="https://docs.google.com/gview?embedded=true&url=https://pc2468.github.io/Pc_Msc_Cv.pdf"
                   className="rounded-lg w-full h-full"
-                  style={{ border: "none", background: "none" }}
+                  style={{ border: "none", background: "black" }}
                   title="Curriculum Vitae"
                 ></iframe>
               </div>
@@ -162,7 +162,7 @@ export default function HeroSection() {
         
               {/* Glass Button (always works as fallback) */}
               <a
-                href="https://pc2468.github.io/pc_msc_cv.pdf"
+                href="https://pc2468.github.io/Pc_Msc_Cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute top-4 right-4 px-5 py-2 rounded-xl 
