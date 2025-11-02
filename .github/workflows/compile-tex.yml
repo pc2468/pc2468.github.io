@@ -1,0 +1,42 @@
+name: Compile TeX -> PDF (awesome-cv)
+
+on:
+  push:
+    paths:
+      - 'awesome-cv/**'
+      - '.github/workflows/compile-tex.yml'
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Tectonic (lightweight TeX engine)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tectonic
+
+      - name: Compile awesome-cv/pc_msc_cv.tex into public/
+        run: |
+          mkdir -p public
+          tectonic --outdir public awesome-cv/pc_msc_cv.tex
+
+      - name: Copy PDF to repo root (lowercase)
+        run: |
+          cp public/pc_msc_cv.pdf pc_msc_cv.pdf || true
+
+      - name: Show output
+        run: ls -l public pc_msc_cv.pdf || true
+
+      - name: Commit compiled PDF if changed
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: actions@github.com
+          message: "chore: compile awesome-cv -> public/pc_msc_cv.pdf"
+          add: "public/pc_msc_cv.pdf pc_msc_cv.pdf"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
